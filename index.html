@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<!--
+  Personal site for Abigail Djossou — ready for GitHub Pages.
+
+  TWO THINGS TO FILL IN BEFORE PUBLISHING (search for "TODO"):
+    1. Your photo — replace the monogram block with an <img> (instructions inline below).
+    2. Your Google Scholar link — add the URL where marked, or delete that link.
+
+  To publish: create a repo named  dabigail2107.github.io , upload this file as index.html,
+  then Settings > Pages > Deploy from branch (main). Your site goes live at
+  https://dabigail2107.github.io
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abigail Djossou</title>
+<meta name="description" content="Abigail Djossou — bioinformatics researcher working on machine learning for genomics and the evaluation of scientific AI. Postdoctoral researcher, Sanchez-Lengeling Lab, University of Toronto.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F4F3EE;
+    --paper-2:#EEEBE2;
+    --ink:#191D24;
+    --moss:#2E6A4C;
+    --moss-deep:#23503A;
+    --amber:#B0702A;
+    --muted:#61656E;
+    --line:#DEDACF;
+    --maxw:760px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"IBM Plex Sans",system-ui,sans-serif;
+    font-size:18px;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* utility label — nods to a code comment, her programming world */
+  .eyebrow{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--moss);
+    margin:0 0 18px;
+  }
+  .eyebrow::before{content:"// ";color:var(--amber);}
+
+  a{color:var(--ink);text-decoration:none;}
+  a:focus-visible{outline:2px solid var(--moss);outline-offset:3px;border-radius:2px;}
+
+  /* ---------- HERO ---------- */
+  header{padding:88px 0 20px;}
+  .seq{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:13px;
+    letter-spacing:.34em;
+    color:var(--moss);
+    opacity:.5;
+    margin-bottom:26px;
+    overflow:hidden;
+    white-space:nowrap;
+  }
+  h1{
+    font-family:"Fraunces",serif;
+    font-weight:500;
+    font-size:clamp(46px,9vw,82px);
+    line-height:1.02;
+    letter-spacing:-.01em;
+    margin:0 0 22px;
+  }
+  .lede{
+    font-size:clamp(19px,2.4vw,22px);
+    max-width:33ch;
+    margin:0 0 30px;
+    color:var(--ink);
+  }
+  .lede em{font-family:"Fraunces",serif;font-style:italic;color:var(--moss-deep);}
+
+  .role{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:13.5px;
+    line-height:1.9;
+    color:var(--muted);
+    margin:0 0 34px;
+  }
+  .role strong{color:var(--ink);font-weight:500;}
+
+  /* links row */
+  .links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    font-family:"IBM Plex Mono",monospace;
+    font-size:13px;
+  }
+  .links a{
+    border:1px solid var(--line);
+    padding:8px 15px;
+    border-radius:999px;
+    background:var(--paper);
+    transition:border-color .18s ease, color .18s ease, background .18s ease;
+  }
+  .links a:hover{border-color:var(--moss);color:var(--moss-deep);background:#fff;}
+
+  /* ---------- SECTIONS ---------- */
+  main{padding-top:30px;}
+  section{padding:52px 0;border-top:1px solid var(--line);}
+  section:first-child{border-top:0;}
+  h2{
+    font-family:"Fraunces",serif;
+    font-weight:500;
+    font-size:30px;
+    margin:0 0 20px;
+    letter-spacing:-.01em;
+  }
+  p{margin:0 0 18px;}
+  p:last-child{margin-bottom:0;}
+  .muted{color:var(--muted);}
+
+  /* research interests */
+  .tags{
+    display:flex;flex-wrap:wrap;gap:8px;
+    font-family:"IBM Plex Mono",monospace;
+    font-size:13px;list-style:none;padding:0;margin:22px 0 0;
+  }
+  .tags li{
+    background:var(--paper-2);
+    padding:7px 13px;border-radius:6px;color:var(--moss-deep);
+  }
+
+  /* current work card */
+  .card{
+    background:var(--paper-2);
+    border-radius:12px;
+    padding:26px 28px;
+  }
+  .card h3{
+    font-family:"IBM Plex Sans",sans-serif;
+    font-size:18px;font-weight:500;margin:0 0 10px;
+  }
+  .card p{margin:0;color:var(--muted);font-size:16.5px;line-height:1.65;}
+
+  /* education timeline */
+  .edu{margin-top:6px;}
+  .edu-item{
+    display:grid;
+    grid-template-columns:88px 1fr;
+    gap:20px;
+    padding:18px 0;
+    border-top:1px dashed var(--line);
+  }
+  .edu-item:first-child{border-top:0;}
+  .edu-year{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:13px;color:var(--moss);padding-top:3px;
+  }
+  .edu-body h3{font-size:18px;font-weight:500;margin:0 0 4px;font-family:"IBM Plex Sans",sans-serif;}
+  .edu-body p{margin:0;color:var(--muted);font-size:15.5px;line-height:1.55;}
+  .edu-body .thesis{font-family:"Fraunces",serif;font-style:italic;color:var(--ink);}
+
+  /* photo / monogram */
+  .id{
+    display:flex;align-items:center;gap:22px;margin-bottom:40px;flex-wrap:wrap;
+  }
+  .monogram{
+    /* TODO PHOTO: to use a real photo, replace this whole <div class="monogram">…</div>
+       with:  <img class="photo" src="photo.jpg" alt="Abigail Djossou">
+       and upload your image next to index.html. */
+    width:96px;height:96px;flex:0 0 96px;
+    border-radius:50%;
+    background:var(--moss);color:var(--paper);
+    display:flex;align-items:center;justify-content:center;
+    font-family:"Fraunces",serif;font-size:34px;font-weight:500;
+    letter-spacing:.02em;
+  }
+  .photo{
+    width:96px;height:96px;flex:0 0 96px;
+    border-radius:50%;object-fit:cover;
+  }
+
+  footer{
+    padding:44px 0 70px;border-top:1px solid var(--line);
+    font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--muted);
+  }
+  footer a{color:var(--moss-deep);}
+  footer a:hover{text-decoration:underline;}
+
+  /* entrance */
+  .fade{opacity:0;transform:translateY(10px);animation:rise .7s ease forwards;}
+  .fade.d1{animation-delay:.06s;}
+  .fade.d2{animation-delay:.12s;}
+  .fade.d3{animation-delay:.18s;}
+  @keyframes rise{to{opacity:1;transform:none;}}
+  @media (prefers-reduced-motion:reduce){
+    .fade{animation:none;opacity:1;transform:none;}
+    html{scroll-behavior:auto;}
+  }
+
+  @media (max-width:560px){
+    body{font-size:17px;}
+    header{padding:60px 0 12px;}
+    .edu-item{grid-template-columns:1fr;gap:4px;}
+    .edu-year{padding-top:0;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header>
+    <div class="seq fade" aria-hidden="true">A T G · G A C · A A A · G C C · T C A · G G A · T A G</div>
+    <h1 class="fade d1">Abigail<br>Djossou</h1>
+    <p class="lede fade d2">Bioinformatics researcher, working where <em>biology</em> meets <em>machine learning</em> — and on how we tell whether scientific AI is any good.</p>
+    <p class="role fade d2">
+      <strong>Postdoctoral Researcher</strong><br>
+      <a href="https://chemcognition.org/" style="color:inherit;border-bottom:1px solid var(--line);">Chemical Cognition Lab</a> · University of Toronto
+    </p>
+    <nav class="links fade d3" aria-label="Profiles and contact">
+      <a href="https://github.com/dabigail2107">GitHub</a>
+      <a href="https://www.linkedin.com/in/abigail-djossou07/">LinkedIn</a>
+      <!-- TODO SCHOLAR: paste your Google Scholar URL below, or delete this line -->
+      <a href="#" >Google Scholar</a>
+      <a href="mailto:abigail.djossou@gmail.com">Email</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section aria-labelledby="about-h">
+      <div class="id">
+        <div class="monogram" aria-hidden="true">AD</div>
+        <div>
+          <p class="eyebrow" id="about-h">About</p>
+          <h2 style="margin:0;">A short version</h2>
+        </div>
+      </div>
+      <p>I came to bioinformatics the long way around — Linux systems and networking first, then machine learning, then mathematics to understand the formulas underneath. I stayed for the questions that sit between biology and computation.</p>
+      <p>My PhD, at Université de Sherbrooke, was on predicting genes in eukaryotic genomes using hidden semi-Markov models and machine learning. Now I build the infrastructure that lets us measure whether AI-generated scientific hypotheses actually hold up.</p>
+    </section>
+
+    <section aria-labelledby="current-h">
+      <p class="eyebrow" id="current-h">Current</p>
+      <h2>What I'm working on</h2>
+      <div class="card">
+        <h3>MecCog / APOE4 community challenge</h3>
+        <p>I work on the evaluation side: consensus metrics, benchmarking, submission validation, and reproducible pipelines for assessing mechanistic hypotheses of Alzheimer's disease. A collaboration with John Moult / BEACON and Hugging Face.</p>
+      </div>
+      <ul class="tags">
+        <li>genomic language models</li>
+        <li>gene prediction</li>
+        <li>evaluation of scientific AI</li>
+        <li>HPC / SLURM pipelines</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="edu-h">
+      <p class="eyebrow" id="edu-h">Education</p>
+      <h2>Training</h2>
+      <div class="edu">
+        <div class="edu-item">
+          <div class="edu-year">2026</div>
+          <div class="edu-body">
+            <h3>PhD, Bioinformatics — Université de Sherbrooke</h3>
+            <p><span class="thesis">Prédiction des gènes eucaryotes : des modèles de Markov cachés à l'apprentissage automatique.</span> Advisor: Aïda Ouangraoua.</p>
+          </div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-year">earlier</div>
+          <div class="edu-body">
+            <h3>Mathematics &amp; Computer Science</h3>
+            <p>Foundations in mathematics, machine learning, and systems / Linux administration — the route that led into bioinformatics.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    Abigail Djossou · Toronto, Canada · <a href="mailto:abigail.djossou@gmail.com">abigail.djossou@gmail.com</a>
+  </footer>
+
+</div>
+
+</body>
+</html>
