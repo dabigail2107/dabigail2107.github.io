@@ -123,6 +123,25 @@
   .tags{display:flex;flex-wrap:wrap;gap:8px;font-family:"IBM Plex Mono",monospace;font-size:13px;list-style:none;padding:0;margin:24px 0 0;}
   .tags li{background:var(--paper-2);padding:7px 13px;border-radius:6px;color:var(--forest-2);}
 
+  /* publications */
+  .pubs{list-style:none;margin:8px 0 0;padding:0;}
+  .pub{display:grid;grid-template-columns:74px 1fr;gap:20px;padding:20px 0;border-top:1px solid var(--line);}
+  .pub:first-child{border-top:0;}
+  .pub-year{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--gold);padding-top:3px;}
+  .pub-body h3{font-family:"Fraunces",serif;font-weight:500;font-size:20px;line-height:1.3;margin:0 0 8px;}
+  .pub-body h3 a{border-bottom:1px solid var(--line);}
+  .pub-body h3 a:hover{border-color:var(--gold);color:var(--forest-2);}
+  .pub-meta{margin:0;color:var(--muted);font-size:15.5px;line-height:1.55;}
+  .pub-meta strong{color:var(--ink);font-weight:600;}
+  .pub-meta em{font-style:italic;}
+  .pub-more{margin-top:22px;font-family:"IBM Plex Mono",monospace;font-size:13.5px;}
+  .pub-more a{color:var(--forest-2);border-bottom:1px solid var(--line);}
+  .pub-more a:hover{border-color:var(--gold);}
+  @media (max-width:640px){
+    .pub{grid-template-columns:1fr;gap:5px;}
+    .pub-year{padding-top:0;}
+  }
+
   /* timeline */
   .timeline{margin:8px 0 0;padding:0;list-style:none;position:relative;}
   .t-item{position:relative;padding:0 0 30px 34px;border-left:2px solid var(--line);}
@@ -226,6 +245,65 @@
         <li>evaluation of scientific AI</li>
         <li>HPC / SLURM pipelines</li>
       </ul>
+    </div>
+  </section>
+
+  <section aria-labelledby="pubs-h">
+    <div class="wrap">
+      <p class="eyebrow" id="pubs-h">Publications</p>
+      <h2>Papers &amp; theses</h2>
+      <ol class="pubs">
+        <li class="pub">
+          <div class="pub-year">2026</div>
+          <div class="pub-body">
+            <h3>Prédiction des gènes eucaryotes : des modèles de Markov cachés à l'apprentissage automatique</h3>
+            <p class="pub-meta"><strong>A. Djossou</strong> · PhD thesis, Université de Sherbrooke. Advisor: Aïda Ouangraoua.</p>
+          </div>
+        </li>
+        <li class="pub">
+          <div class="pub-year">2025</div>
+          <div class="pub-body">
+            <h3><a href="https://doi.org/10.1093/bioadv/vbaf222">An overview of computational methods for gene prediction in eukaryotes: strengths, limitations, and future directions</a></h3>
+            <p class="pub-meta"><strong>A. Djossou</strong>, W. Y. D. D. Ouedraogo, A. Ouangraoua · <em>Bioinformatics Advances</em>, 5(1), vbaf222.</p>
+          </div>
+        </li>
+        <li class="pub">
+          <div class="pub-year">2025</div>
+          <div class="pub-body">
+            <h3>Psychosocial work determinants of older adults' participation in the job market: protocol for a scoping review of quantitative longitudinal studies</h3>
+            <p class="pub-meta">R. Ndjaboue, S. Ruddy, F. Bulver, J. Diendere, M. Levasseur, M. Nguefack, … , <strong>A. Djossou</strong> · <em>Systematic Reviews</em>, 14(1), 91.</p>
+          </div>
+        </li>
+        <li class="pub">
+          <div class="pub-year">2024</div>
+          <div class="pub-body">
+            <h3>Retirement status and physical activity in US adults with type 2 diabetes mellitus: influence of sex, race/ethnicity and acculturation level</h3>
+            <p class="pub-meta">R. Ndjaboue, J. D. Diendere, F. Bulver, <strong>A. Djossou</strong>, S. Ruddy, G. Ngueta · <em>Primary Care Diabetes</em>, 18(1), 52–58.</p>
+          </div>
+        </li>
+        <li class="pub">
+          <div class="pub-year">2022</div>
+          <div class="pub-body">
+            <h3>From pairwise to multiple spliced alignment</h3>
+            <p class="pub-meta">S. Jammali, <strong>A. Djossou</strong>, W. Y. D. D. Ouédraogo, Y. Nevers, I. Chegrane, … · <em>Bioinformatics Advances</em>, 2(1), vbab044.</p>
+          </div>
+        </li>
+        <li class="pub">
+          <div class="pub-year">2019</div>
+          <div class="pub-body">
+            <h3>Blockchain for child labour decrease in cocoa production in West and Central Africa</h3>
+            <p class="pub-meta">R. B. Senou, J. Dégila, E. C. Adjobo, <strong>A. P. M. Djossou</strong> · <em>IFAC-PapersOnLine</em>, 52(13), 2710–2715.</p>
+          </div>
+        </li>
+        <li class="pub">
+          <div class="pub-year">working paper</div>
+          <div class="pub-body">
+            <h3>Multiple spliced alignment for transcript evolution estimation and gene models prediction</h3>
+            <p class="pub-meta">S. Jammali, <strong>A. Djossou</strong>.</p>
+          </div>
+        </li>
+      </ol>
+      <p class="pub-more"><a href="https://scholar.google.com/citations?user=zoYUr4kAAAAJ&hl=en">Full list on Google Scholar →</a></p>
     </div>
   </section>
 
