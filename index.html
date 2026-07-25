@@ -80,6 +80,21 @@
   }
   .hero .links a:hover{border-color:var(--gold-soft);background:rgba(228,201,136,.1);color:#fff;}
 
+  /* hero layout with photo */
+  .hero-grid{display:flex;gap:52px;align-items:center;}
+  .hero-text{flex:1 1 auto;min-width:0;}
+  .hero-photo{flex:0 0 300px;}
+  .hero-photo img{
+    width:300px;height:370px;object-fit:cover;display:block;
+    border-radius:18px;border:3px solid rgba(228,201,136,.55);
+    box-shadow:0 18px 40px rgba(0,0,0,.28);
+  }
+  @media (max-width:760px){
+    .hero-grid{flex-direction:column-reverse;align-items:stretch;gap:30px;}
+    .hero-photo{flex:0 0 auto;}
+    .hero-photo img{width:100%;height:auto;max-height:440px;}
+  }
+
   /* ---------------- SECTIONS ---------------- */
   section{padding:66px 0;border-top:1px solid var(--line);}
   section.hero{border-top:0;padding-top:96px;}
@@ -159,20 +174,29 @@
 
 <section class="hero">
   <div class="wrap">
-    <div class="strand fade" aria-hidden="true">A · T · G &nbsp; G A C &nbsp; A A A &nbsp; G C C &nbsp; T C A &nbsp; G G A &nbsp; T A G</div>
-    <h1 class="fade d1">Abigail<br>Djossou</h1>
-    <p class="lede fade d2">Bioinformatics researcher. I work where <em>biology</em> meets <em>machine learning</em>, and on how we measure whether scientific AI is any good.</p>
-    <p class="role fade d2">
-      Postdoctoral Researcher<br>
-      <a href="https://chemcognition.org/">Chemical Cognition Lab</a> · University of Toronto
-    </p>
-    <nav class="links fade d3" aria-label="Profiles and contact">
-      <a href="https://github.com/dabigail2107">GitHub</a>
-      <a href="https://www.linkedin.com/in/abigail-djossou07/">LinkedIn</a>
-      <!-- TODO SCHOLAR: paste your Google Scholar URL below, or delete this line -->
-      <a href="#">Google Scholar</a>
-      <a href="mailto:abigail.djossou@gmail.com">Email</a>
-    </nav>
+    <div class="hero-grid">
+      <div class="hero-text">
+        <div class="strand fade" aria-hidden="true">A · T · G &nbsp; G A C &nbsp; A A A &nbsp; G C C &nbsp; T C A</div>
+        <h1 class="fade d1">Abigail<br>Djossou</h1>
+        <p class="lede fade d2">Bioinformatics researcher. I work where <em>biology</em> meets <em>machine learning</em>, and on how we measure whether scientific AI is any good.</p>
+        <p class="role fade d2">
+          Postdoctoral Researcher<br>
+          <a href="https://chemcognition.org/">Chemical Cognition Lab</a> · University of Toronto
+        </p>
+        <nav class="links fade d3" aria-label="Profiles and contact">
+          <a href="https://github.com/dabigail2107">GitHub</a>
+          <a href="https://www.linkedin.com/in/abigail-djossou07/">LinkedIn</a>
+          <!-- TODO SCHOLAR: paste your Google Scholar URL below, or delete this line -->
+          <a href="#">Google Scholar</a>
+          <a href="mailto:abigail.djossou@gmail.com">Email</a>
+        </nav>
+      </div>
+      <div class="hero-photo fade d1">
+        <img src="photo.jpg" alt="Abigail Djossou">
+        <!-- Upload your photo as  photo.jpg  next to index.html.
+             If it's a .png, change photo.jpg to photo.png above. -->
+      </div>
+    </div>
   </div>
 </section>
 
@@ -180,15 +204,8 @@
 
   <section aria-labelledby="about-h">
     <div class="wrap">
-      <div class="id">
-        <img class="photo" src="photo.jpg" alt="Abigail Djossou">
-        <!-- Upload your photo as  photo.jpg  next to index.html.
-             If it's a .png, change the name above to  photo.png . -->
-        <div>
-          <p class="eyebrow" id="about-h">About</p>
-          <h2 style="margin:0;">The long way to bioinformatics</h2>
-        </div>
-      </div>
+      <p class="eyebrow" id="about-h">About</p>
+      <h2>The long way to bioinformatics</h2>
       <p class="lead-p">I started in Linux systems and networking, spent years in machine learning, then studied mathematics to understand the formulas underneath it all. Graphic design and writing came along the way.</p>
       <p>Every step pointed toward the same place: the questions that sit between biology and computation. I've studied and worked across Benin, Nigeria, South Africa, Rwanda, India, and now Canada, and I'm always keen to learn the next thing. My PhD was on predicting genes in eukaryotic genomes with hidden semi-Markov models and machine learning; today I build the infrastructure that lets us judge whether AI-generated scientific hypotheses hold up.</p>
     </div>
